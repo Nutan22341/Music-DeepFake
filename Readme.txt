@@ -1,9 +1,9 @@
-# 🎶 Fake vs Real Music Detector
+# Fake vs Real Music Detector
 
 A **web-based system** to classify audio as **real (human-composed)** or **fake (AI-generated)** using **pretrained MERT embeddings** and a **CNN model**.
 ---
 
-## 🚀 Features
+## Features
 
 - 🎵 Upload `.wav` audio files and detect whether they are **AI-generated** or **human-composed**.
 - 🔍 Uses [`m-a-p/MERT-v1-330M`](https://huggingface.co/m-a-p/MERT-v1-330M) to extract audio embeddings.
