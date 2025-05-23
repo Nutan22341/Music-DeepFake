@@ -2,7 +2,6 @@
 # 🎶 Fake vs Real Music Detector
 
 A **web-based system** to classify audio as **real (human-composed)** or **fake (AI-generated)** using **pretrained MERT embeddings** and a **CNN model**.
-
 ---
 
 ## 🚀 Features
