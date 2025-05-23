@@ -18,7 +18,7 @@ A **web-based system** to classify audio as **real (human-composed)** or **fake 
 
 ```bash
 git clone [https://github.com/Nutan22341/Music-DeepFake.git]
-cd fake-vs-real-music-detector
+cd Music-DeepFake
 
 2. Set up a virtual environment
 3. Install dependencies
