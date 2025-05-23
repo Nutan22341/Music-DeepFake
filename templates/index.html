@@ -1,0 +1,124 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Music Detector</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 30px;
+            background-color: #f2f6ff;
+        }
+        .container {
+            max-width: 600px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .result {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center mb-4">🎧 Fake Music Detector</h2>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="audio" class="form-label">Upload WAV Audio:</label>
+            <input class="form-control" type="file" name="audio" accept=".wav" required>
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+    <div class="alert alert-info result text-center">
+        <strong>Prediction:</strong> {{ prediction }}
+    </div>
+    {% endif %}
+</div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fake vs Real Music Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        form {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin-bottom: 1rem;
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #1f618d;
+        }
+        .result {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .real {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .fake {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .error {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fake vs Real Music Detector</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="audio" accept=".wav" required />
+        <br />
+        <button type="submit">Upload and Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result
+            {% if 'Real' in prediction %}real
+            {% elif 'Fake' in prediction %}fake
+            {% else %}error
+            {% endif %}
+        ">
+            {{ prediction }}
+        </div>
+    {% endif %}
+</body>
+</html>
